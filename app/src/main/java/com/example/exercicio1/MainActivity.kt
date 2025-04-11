@@ -1,22 +1,16 @@
 package com.example.exercicio1
 
 import android.os.Bundle
-import android.util.Log
-import android.view.inputmethod.InputBinding
 import android.widget.ArrayAdapter
-import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.exercicio1.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityMainBinding
     private lateinit var idade: EditText
     private lateinit var escolha: Spinner
@@ -38,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         val dados = listOf("Homem", "Mulher")
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, dados)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        escolha.adapter = adapter
+        binding.spinner4.adapter = adapter
 
         binding.button5.setOnClickListener {
             val idadeString = idade.text.toString()
